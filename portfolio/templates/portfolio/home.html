@@ -185,51 +185,40 @@
 <!-- Portfolio Section Start -->
 <section class="portfolio section" id="portfolio">
       <div class="container">
-          <div class="row">
-              <div class="section-title padd-15">
-                  <h2>Notre Portfolio</h2>
-              </div>
+        <div class="row">
+          <div class="section-title padd-15">
+            <h2>Notre Portfolio</h2>
           </div>
-          <!-- Portfolio Filter Start -->
-          <div class="row">
-              <div class="portfolio-filter padd-15">
-                  <button class="active" data-filter="all">Tous</button>
-                  {% for category in categories %}
-                  <button data-filter="{{ category.slug }}">{{ category.name }}</button>
-                  {% endfor %}
-              </div>
+        </div>
+        <!-- Portfolio Filter Start -->
+        <div class="row">
+          <div class="portfolio-filter padd-15">
+            <button class="active" data-filter="all">Tous</button>
+            {% for category in categories %}
+            <button data-filter="{{ category.slug }}">{{ category.name }}</button>
+            {% endfor %}
           </div>
-          <!-- Portfolio Filter End -->
-  
+        </div>
+        <!-- Portfolio Filter End -->
+    
         <!-- Portfolio Items Start -->
-<!-- Portfolio Items Start -->
-<div class="row portfolio-items">
-      {% for item in portfolio_items %}
-      <div class="portfolio-item padd-15" data-category="{{ item.category.slug }}">
-          <div class="portfolio-media">
+        <div class="row portfolio-items">
+          {% for item in portfolio_items %}
+          <div class="portfolio-item padd-15" data-category="{{ item.category.slug }}">
               {% if item.isVideo %}
-              <iframe width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}" 
+              <iframe width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}"
                       title="{{ item.title }}" frameborder="0" allowfullscreen></iframe>
               {% else %}
-              <img src="{{ item.image.url }}" alt="{{ item.title }}">
+              <img class="portfolio-img" src="{{ item.image.url }}" alt="{{ item.title }}">
               {% endif %}
+            
           </div>
-          <div class="portfolio-info">
-              <h3>{{ item.title }}</h3>
-              {% if not item.isVideo %}
-              <a href="{{ item.image.url }}" class="portfolio-lightbox"><i class="fas fa-search"></i></a>
-              {% endif %}
-          </div>
+          {% endfor %}
+        </div>
+        <!-- Portfolio Items End -->
       </div>
-      {% endfor %}
-  </div>
-  <!-- Portfolio Items End -->
-  
-  <!-- Portfolio Items End -->
-  
-          <!-- Portfolio Items End -->
-      </div>
-  </section>
+    </section>
+    
   <!-- Portfolio Section End -->
   
       <!-- Contact Section Start -->
