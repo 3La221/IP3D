@@ -1,0 +1,295 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>IP3D - Portfolio</title>
+      <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+      <script src="{% static 'js/main.js' %}"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+      <!-- Main Container -->
+      <div class="main-container">
+            <!-- Aside Start -->
+            <div class="aside">
+                  <div class="logo">
+                        <a href="#"><span>i</span>P3D</a>
+                  </div>
+                  <div class="nav-toggler">
+                        <span>
+
+                        </span>
+                  </div>
+                  <ul class="nav"> 
+                        
+                        <li><a href="" class="active"> <i class="fa fa-home"></i> Accueil </a></li>
+                        <li><a href="#services"> <i class="fa fa-list"></i> Services </a></li>
+                        <li><a href="#portfolio"> <i class="fa fa-briefcase"></i> Portfolio </a></li>
+                        <li><a href="#about"> <i class="fa fa-user"></i> A Propos </a></li>
+
+                        <li><a href="#contact"> <i class="fa fa-comments"></i> Contact </a></li>
+
+                  </ul>
+            </div>
+            <!-- Aside End -->
+            <!-- Main Content Start-->
+             <div class="main-content">
+                  <!-- Home Section Start -->
+                  <section class="home section active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="home-info padd-15">
+                                    <h3 class="hello">
+                                        IP3D
+                                    </h3>
+                                    <h3 class="my-profession">
+                                          Agence digitale qui vous inspire avec 
+                                    </h3>
+                                    <h3 class="desc">
+                                          <span class="typing">Inspiration</span>
+
+
+                                    </h3>
+                                    <p>
+                                        Chez IP3d, une agence digitale dédiée à l'innovation, nous vous aidons à faire croître votre entreprise grâce à des solutions numériques sur mesure. Que ce soit pour le développement web, la stratégie digitale, ou la gestion des réseaux sociaux, notre équipe est prête à transformer vos idées en succès. Avec notre expertise et notre approche personnalisée, nous vous guidons à chaque étape pour atteindre vos objectifs commerciaux.
+                                    </p>
+                                    <div class="social-media-links">
+                                          <a href="https://www.instagram.com/yourusername" target="_blank">
+                                              <img src="{{ MEDIA_URL }}instagram.png" alt="Instagram">
+                                          </a>
+                                          <a href="https://www.facebook.com/yourusername" target="_blank">
+                                              <img src="{{ MEDIA_URL }}facebook.png" alt="Facebook">
+                                          </a>
+                                      </div>
+                                </div>
+                                <div class="home-img padd-15">
+                                    <img src="{{MEDIA_URL}}logo.jpg" alt="IP3d Digital Agency">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    
+                  <!-- Home Section End -->
+                  <!-- About Section Start -->
+                  <section class="about section hidden" id="about">
+                        <div class="container">
+                            <div class="row">
+                                <div class="about-info padd-15">
+                                    <div class="section-title">
+                                        <h2>À Propos de Nous</h2>
+                                    </div>
+                                    <p>
+                                        Bienvenue chez <strong>IP3D</strong>, votre agence spécialisée dans la création visuelle et numérique. Nous proposons une gamme complète de services pour répondre à vos besoins créatifs. 
+                                    </p>
+                                    <ul class="services-list">
+                                        <li>🎥 Animation 3D & Effets Visuels</li>
+                                        <li>🎬 Montage Vidéo</li>
+                                        <li>📺 Spot Publicitaire</li>
+                                        <li>🎨 Création de Logo</li>
+                                        <li>🎉 Évènements & Shooting</li>
+                                        <li>📢 Sponsoring</li>
+                                        <li>🪧 Panneaux Publicitaires</li>
+                                        <li>💻 Création de Sites Web</li>
+                                    </ul>
+                                    <p>
+                                        Chez <strong>IP3D</strong>, nous transformons vos idées en réalité grâce à notre expertise et notre passion pour l'innovation. Contactez-nous pour donner vie à vos projets!
+                                    </p>
+                                </div>
+                                <div class="about-img padd-15">
+                                    <img src="https://placehold.co/600x400" alt="IP3D">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                   <!-- About Section End -->
+
+                  <!-- Services Section Start -->
+                   <!-- Services Section Start -->
+<section class="services section hidden" id="services">
+      <div class="container">
+          <div class="row">
+              <div class="section-title">
+                  <h2>Nos Services</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-film"></i></div>
+                  <h4>Animation 3D & Effets Visuels</h4>
+                  <p>
+                      Donnez vie à vos idées avec des animations 3D et des effets visuels captivants.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-video"></i></div>
+                  <h4>Montage Vidéo</h4>
+                  <p>
+                      Création de vidéos dynamiques qui captivent et communiquent votre message.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-bullhorn"></i></div>
+                  <h4>Spot Publicitaire</h4>
+                  <p>
+                      Des spots publicitaires impactants pour promouvoir vos produits ou services.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-paint-brush"></i></div>
+                  <h4>Création de Logo</h4>
+                  <p>
+                      Conception de logos uniques qui représentent parfaitement votre marque.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-camera"></i></div>
+                  <h4>Évènements & Shooting</h4>
+                  <p>
+                      Couverture complète de vos évènements et sessions de shooting professionnelles.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-handshake"></i></div>
+                  <h4>Sponsoring</h4>
+                  <p>
+                      Partenariats et sponsoring pour renforcer votre présence sur le marché.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa-solid fa-solar-panel"></i></div>
+                  <h4>Panneaux Publicitaires</h4>
+                  <p>
+                      Conception et réalisation de panneaux publicitaires percutants.
+                  </p>
+              </div>
+              <div class="service-item padd-15">
+                  <div class="icon"><i class="fa fa-globe"></i></div>
+                  <h4>Création de Sites Web</h4>
+                  <p>
+                      Développement de sites web sur mesure pour propulser votre présence en ligne.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Services Section End -->
+
+  <!-- Portfolio Section Start -->
+<!-- Portfolio Section Start -->
+<section class="portfolio section" id="portfolio">
+      <div class="container">
+          <div class="row">
+              <div class="section-title padd-15">
+                  <h2>Notre Portfolio</h2>
+              </div>
+          </div>
+          <!-- Portfolio Filter Start -->
+          <div class="row">
+              <div class="portfolio-filter padd-15">
+                  <button class="active" data-filter="all">Tous</button>
+                  {% for category in categories %}
+                  <button data-filter="{{ category.slug }}">{{ category.name }}</button>
+                  {% endfor %}
+              </div>
+          </div>
+          <!-- Portfolio Filter End -->
+  
+        <!-- Portfolio Items Start -->
+<!-- Portfolio Items Start -->
+<div class="row portfolio-items">
+      {% for item in portfolio_items %}
+      <div class="portfolio-item padd-15" data-category="{{ item.category.slug }}">
+          <div class="portfolio-media">
+              {% if item.isVideo %}
+              <iframe width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}" 
+                      title="{{ item.title }}" frameborder="0" allowfullscreen></iframe>
+              {% else %}
+              <img src="{{ item.image.url }}" alt="{{ item.title }}">
+              {% endif %}
+          </div>
+          <div class="portfolio-info">
+              <h3>{{ item.title }}</h3>
+              {% if not item.isVideo %}
+              <a href="{{ item.image.url }}" class="portfolio-lightbox"><i class="fas fa-search"></i></a>
+              {% endif %}
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  <!-- Portfolio Items End -->
+  
+  <!-- Portfolio Items End -->
+  
+          <!-- Portfolio Items End -->
+      </div>
+  </section>
+  <!-- Portfolio Section End -->
+  
+      <!-- Contact Section Start -->
+       <!-- Contact Section Start -->
+<section class="contact section" id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="section-title">
+                  <h2>Contactez-nous</h2>
+              </div>
+              <div class="contact-info">
+                  <div class="contact-details">
+                      <h3>Contactez-nous</h3>
+                      <p>Si vous avez des questions ou souhaitez entrer en contact avec nous, n'hésitez pas à utiliser le formulaire ci-dessous ou à nous contacter via les informations ci-dessous.</p>
+                      <ul>
+                          <li><i class="fa fa-map-marker-alt"></i> Adresse : Zonka Birkhadem Algiers, Algeria</li>
+                          <li><i class="fa fa-phone"></i> Téléphone : 0554 31 27 13</li>
+                          <li><i class="fa fa-envelope"></i> Email : ip3d@hotmail.fr</li>
+                      </ul>
+                  </div>
+                  <div class="contact-form">
+                      <h3>Formulaire de Contact</h3>
+                      <form action="your_form_processing_url" method="post">
+                          <div class="form-group">
+                              <label for="name">Nom</label>
+                              <input type="text" id="name" name="name" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="email">Email</label>
+                              <input type="email" id="email" name="email" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="subject">Sujet</label>
+                              <input type="text" id="subject" name="subject">
+                          </div>
+                          <div class="form-group">
+                              <label for="message">Message</label>
+                              <textarea id="message" name="message" rows="5" required></textarea>
+                          </div>
+                          <button type="submit" class="btn">Envoyer le Message</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Contact Section End -->
+  
+<!-- Contact Section Start -->  
+
+
+                   
+
+             </div>
+            <!-- Main Content End-->
+
+      </div>
+      <!-- Main Container End -->
+
+      
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" referrerpolicy="no-referrer"></script>
+</html>
