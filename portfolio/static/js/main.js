@@ -90,7 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Filter portfolio items
             portfolioItems.forEach(item => {
-                const category = item.getAttribute('data-category');
+
+                  const category = item.getAttribute('data-category');
+                
 
                 if (filterValue === 'all' || category === filterValue) {
                     item.style.display = 'block';

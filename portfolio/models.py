@@ -19,6 +19,8 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
+        if self.title is None:
+            return f'{self.id} no title'
         return self.title
 
     

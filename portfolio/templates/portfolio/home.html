@@ -195,7 +195,7 @@
           <div class="portfolio-filter padd-15">
             <button class="active" data-filter="all">Tous</button>
             {% for category in categories %}
-            <button data-filter="{{ category.slug }}">{{ category.name }}</button>
+            <button data-filter="{{ category.id }}">{{ category.name }}</button>
             {% endfor %}
           </div>
         </div>
@@ -204,9 +204,9 @@
         <!-- Portfolio Items Start -->
         <div class="row portfolio-items">
           {% for item in portfolio_items %}
-          <div class="portfolio-item padd-15" data-category="{{ item.category.slug }}">
+          <div class="portfolio-item padd-15" data-category="{{ item.category.id }}">
               {% if item.isVideo %}
-              <iframe width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}"
+              <iframe class="portfolio-video" width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}"
                       title="{{ item.title }}" frameborder="0" allowfullscreen></iframe>
               {% else %}
               <img class="portfolio-img" src="{{ item.image.url }}" alt="{{ item.title }}">
@@ -241,7 +241,7 @@
                   </div>
                   <div class="contact-form">
                       <h3>Formulaire de Contact</h3>
-                      <form action="your_form_processing_url" method="post">
+                      <form >
                           <div class="form-group">
                               <label for="name">Nom</label>
                               <input type="text" id="name" name="name" required>
