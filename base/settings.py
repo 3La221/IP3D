@@ -25,14 +25,16 @@ SECRET_KEY = 'django-insecure-idwx_3==&o2um3@20+k86+gerwzu*$88k%(bdjyw1+6-erwube
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ip3d-dz.com', 'https://ip3d-dz.com','127.0.0.1' ,'www.ip3d-dz.com ' , '86.38.217.190:8010' , 'https://86.38.217.190:8010'] 
+ALLOWED_HOSTS = ['ip3d-dz.com', 'www.ip3d-dz.com' , 'https://www.ip3d-dz.com', 'https://ip3d-dz.com','127.0.0.1' ,'www.ip3d-dz.com ' , '86.38.217.190:8010' , 'https://86.38.217.190:8010'] 
 
 CSRF_TRUSTED_ORIGINS = [
     'https://ip3d-dz.com',
     'https://www.ip3d-dz.com',
     'http://86.38.217.190:8010',
     'https://86.38.217.190:8010',
+    'www.ip3d-dz.com'
 ]
+
 
 
 
