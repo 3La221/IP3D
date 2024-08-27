@@ -19,5 +19,7 @@ EXPOSE 8000
 # Set the environment variable for Django settings module
 ENV DJANGO_SETTINGS_MODULE=base.settings
 
+RUN python manage.py collectstatic --noinput
+
 # Command to run the Django application
 CMD ["gunicorn", "base.wsgi:application", "--bind", "0.0.0.0:8000"]
