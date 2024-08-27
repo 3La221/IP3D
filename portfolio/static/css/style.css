@@ -211,9 +211,10 @@ ul {
       color: var(--text-black-900);
       font-weight: 700;
       padding: 15px 20px;
-      font-size: 30px;
+      font-size: 52px;
       letter-spacing: 5px;
       position: relative;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -349,7 +350,7 @@ h3.desc span {
       border-right: 10px solid var(--skin-color);
 
       right: 20px;
-      bottom: 40px;
+      bottom: 180px;
 
 
 }
@@ -425,7 +426,7 @@ h3.desc span {
   }
   
   .section-title h2 {
-      font-size: 36px;
+      font-size: 42px;
       color: var(--text-black-900);
       margin-bottom: 10px;
       position: relative;
@@ -491,14 +492,10 @@ h3.desc span {
   }
   
   .contact .section-title {
-      text-align: center;
       margin-bottom: 40px;
   }
   
-  .contact .section-title h2 {
-      font-size: 36px;
-      font-weight: 700;
-  }
+  
   
   .contact-info {
       display: flex;
@@ -721,10 +718,7 @@ h3.desc span {
 
       
         
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        
         
         .section-title h2 {
             font-size: 32px;
@@ -739,6 +733,8 @@ h3.desc span {
             text-align: center;
             margin-bottom: 30px;
         }
+
+        
         
         .portfolio-filter button {
             background-color: var(--skin-color);
@@ -752,16 +748,16 @@ h3.desc span {
         }
         
         .portfolio-filter button.active {
-            background-color: var(--bg-black-900);
+            background-color: var(--bg-black-);
             color: #fff;
-            border-color: var(--text-black-700);
+            transition: all 0.3s ease;
         }
         
         /* Portfolio Items Styling */
         
         
-        .portfolio-info {
-            padding: 15px;
+      .portfolio .section-title {
+            margin-top: 60px;
         }
         
         .portfolio-info h3 {
@@ -802,4 +798,5 @@ h3.desc span {
             display: block;
         }
 
+        
         
