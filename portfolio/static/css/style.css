@@ -665,7 +665,6 @@ h3.desc span {
             
             .services {
                   padding: 60px;
-                  height: 100dvh;
             }
             
             .services .service-item {
@@ -674,9 +673,10 @@ h3.desc span {
               }
 
 
-              .portfolio {
-                  height: 100dvh;
+             
 
+              .portfolio .portfolio-items {
+                  margin-bottom: 100px;
               }
 
                .section-title {
@@ -687,6 +687,11 @@ h3.desc span {
                   flex: 0 0 100%;
                   max-width: 100%;
                   padding: 20px;
+              }
+
+              .about .about-img{
+                  margin-bottom: 100px;
+
               }
 
               .contact .contact-info {
