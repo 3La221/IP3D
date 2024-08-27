@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['ip3d-dz.com', 'https://ip3d-dz.com' ,'www.ip3d-dz.com ' , '86.38.217.190:8010' , 'https://86.38.217.190:8010'] 
 
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
