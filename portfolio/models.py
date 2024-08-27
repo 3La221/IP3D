@@ -18,6 +18,13 @@ class Project(models.Model):
     isFeatured = models.BooleanField(default=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+    def save(self, *args, **kwargs):
+        if self.url: 
+            self.isVideo = True
+        else:
+            self.isVideo = False
+        super(Project, self).save(*args, **kwargs)
+
     def __str__(self):
         if self.title is None:
             return f'{self.id} no title'
