@@ -637,88 +637,104 @@ h3.desc span {
                   left: 270px;
             }
 
-            .home-info {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  align-items: center;
+          
+      }
+
+      @media (max-width: 764px) {
+            .home .home-img {
+                  display: none;
+            }
+
+            .home .home-info {
+                  flex : 0 0 100%;
+                  max-width: 100%;
+                  padding: 20px;
                   text-align: center;
             }
 
-            .home .home-img {
+            .home .home-info p {
                   display: none;
             }
 
-            .home .home-info .my-profession  , .typing{
-                  font-size: 40px;
+            .home .social-media-links{
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+            }
             
+            .services {
+                  padding: 60px;
+                  height: 100dvh;
             }
             
-            .about .about-content .personal-info .info-item p span {
-                  display: block;
-                  margin-left: 0;
-            }
-      }
-
-      @media (max-width:991px) {
-            .home .home-info {
-                  flex: 0 0 100%;
-                  max-width: 100%;
-            }
-            .home .home-img {
-                  display: none;
-            }
-
-            .about .about-info {
-                  flex : 0 0 100%;
-                  max-width: 100%;
-                  
-            }
-
-            .about .container {
-                  display: flex !important; 
-                  flex-direction: column !important; 
-                  align-items: center !important;
-                  justify-content: center !important;
-            }
-
-           
-
-            .about .about-img {
-                  display: none;
-            }
-
-            .services .section-title {
-                  flex : 0 0 100%;
-                  max-width: 100%;
-                  margin-left: 40px;
-            }
             .services .service-item {
                   flex: 0 0 100%;
                   max-width: 100%;
-            }
+              }
 
-             .contact .section-title {
-                  margin-left: 40px;
-            }
 
-            .contact .contact-info {
-                  margin-left: 40px;
-            }
+              .portfolio {
+                  height: 100dvh;
 
-            .contact .contact-details {
-                  margin-right: 40px;
-            }
+              }
 
-            .container {
+               .section-title {
+                  padding-left: 40px;
+              }
+
+              .about .about-info{
+                  flex: 0 0 100%;
+                  max-width: 100%;
                   padding: 20px;
+              }
+
+              .contact .contact-info {
+                  flex-direction: column;
+                  align-items: center;
+                  padding: 40px;
+              }
+         }
+
+         @media (max-width: 460px) {
+            .home  {
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  text-align: center;
+              }
+              
+              .home .home-info h3 {
+                  font-size: 24px;
+              }
+              
+              .home .home-info h3.my-profession {
+                  font-size: 42px;
+              }
+              
+              .home .home-info h3.desc span {
+                  font-size: 32px;
+              }
+              
+              .home .home-info p {
+                  font-size: 16px;
+              }
+              
+              .home .home-img::after {
+                  display: none;
+              }
+              
+              .home .home-img::before {
+                  display: none;
+              }
+              
+              .home .home-img img {
+                  height: 200px;
             }
             
-            
+         }
 
-              
-      }
-
+      
       
         
         
