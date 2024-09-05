@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 'Innovation',
                 'Impact',
                 'Créativité',
-                'Succès',
-                'Excellence'
+                'Qualité',
+                'Rapidité',
+                'Discretion'
             ],
             typeSpeed: 100,
             backSpeed: 60,

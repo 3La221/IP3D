@@ -13,4 +13,4 @@ def add_portfolio_categories():
     ]
 
     for category_name in categories:
-        Category.objects.create(name=category_name)
+        Category.objects.create(name=category_name, order=categories.index(category_name) + 1)

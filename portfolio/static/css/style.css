@@ -336,9 +336,10 @@ h3.desc span {
 
 .home .home-img {
       flex: 0 0 40%;
-      max-width: 40%;
+      max-width: 80%;
       text-align: center;
       position: relative;
+      
 }
 
 .home .home-img::after{
@@ -371,7 +372,7 @@ h3.desc span {
 
 
 .home .home-img img {
-      height: 250px;
+      height: 400px;
       margin: auto;
       border-radius: 5px;
       

@@ -32,7 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.ip3d-dz.com',
     'http://86.38.217.190:8010',
     'https://86.38.217.190:8010',
-    'www.ip3d-dz.com'
+    # 'www.ip3d-dz.com'
 ]
 
 
