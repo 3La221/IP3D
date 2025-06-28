@@ -62,21 +62,21 @@
                                     </p>
                                     <div class="social-media-links">
                                           <a href="https://www.instagram.com/ip3d.dz/" target="_blank">
-                                              <img src="{{ MEDIA_URL }}instagram.png" alt="Instagram">
+                                              <img src="{% if MEDIA_URL %}{{ MEDIA_URL }}instagram.png{% else %}{% static 'images/instagram.png' %}{% endif %}" alt="Instagram">
                                           </a>
                                           <a href="https://www.facebook.com/ip3d.dz" target="_blank">
-                                              <img src="{{ MEDIA_URL }}facebook.png" alt="Facebook">
+                                              <img src="{% if MEDIA_URL %}{{ MEDIA_URL }}facebook.png{% else %}{% static 'images/facebook.png' %}{% endif %}" alt="Facebook">
                                           </a>
                                           <a href="https://www.youtube.com/@ip3d01" target="_blank">
-                                            <img src="{{ MEDIA_URL }}youtube.png" alt="Youtube">
+                                            <img src="{% if MEDIA_URL %}{{ MEDIA_URL }}youtube.png{% else %}{% static 'images/youtube.png' %}{% endif %}" alt="Youtube">
                                         </a>
                                         <a href="https://www.tiktok.com/@ip3d.dz" target="_blank">
-                                            <img src="{{ MEDIA_URL }}tik-tok.png" alt="TikTok">
+                                            <img src="{% if MEDIA_URL %}{{ MEDIA_URL }}tik-tok.png{% else %}{% static 'images/tik-tok.png' %}{% endif %}" alt="TikTok">
                                         </a>
                                       </div>
                                 </div>
                                 <div class="home-img padd-15">
-                                    <img src="{{MEDIA_URL}}logo.png" alt="IP3d Digital Agency">
+                                    <img src="{% if MEDIA_URL %}{{MEDIA_URL}}logo.png{% else %}{% static 'images/logo.png' %}{% endif %}" alt="IP3d Digital Agency">
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                     </p>
                                 </div>
                                 <div class="about-img padd-15">
-                                    <img src="{{MEDIA_URL}}logo.png" alt="IP3D">
+                                    <img src="{% if MEDIA_URL %}{{MEDIA_URL}}logo.png{% else %}{% static 'images/logo.png' %}{% endif %}" alt="IP3D">
                                 </div>
                             </div>
                         </div>
@@ -204,7 +204,9 @@
           <div class="portfolio-filter padd-15">
             <button class="active" data-filter="all">Tous</button>
             {% for category in categories %}
+            {% if category and category.name %}
             <button data-filter="{{ category.id }}">{{ category.name }}</button>
+            {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -213,16 +215,32 @@
         <!-- Portfolio Items Start -->
         <div class="row portfolio-items">
             {% for item in portfolio_items %}
-            <div class="portfolio-item padd-15" data-category="{{ item.category.id }}">
-                {% if item.isVideo %}
-                <a href="{{ item.url }}" target="_blank">
-                    <iframe class="portfolio-video" width="560" height="315" src="{{ item.url|replace:"watch?v=|embed/" }}"
-                            title="{{ item.title }}" frameborder="0" allowfullscreen></iframe>
-                </a>
-                {% else %}
-                <img class="portfolio-img" src="{{ item.image.url }}" alt="{{ item.title }}" onclick="showImageModal('{{ item.image.url }}')">
+            {% if item %}
+            <div class="portfolio-item padd-15" data-category="{% if item.category %}{{ item.category.id }}{% else %}0{% endif %}">
+                {% if item.isVideo and item.url %}
+                <div class="video-wrapper">
+                    <iframe class="portfolio-video" 
+                            width="560" 
+                            height="315" 
+                            src="{{ item.url|youtube_embed_url }}"
+                            title="{% if item.title %}{{ item.title }}{% else %}Video{% endif %}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    {% if item.url %}
+                    <div class="video-link theme-style">
+                        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube"></i> Voir sur YouTube
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+                {% elif item.image %}
+                <img class="portfolio-img" src="{{ item.image.url }}" alt="{% if item.title %}{{ item.title }}{% else %}Portfolio Item{% endif %}" onclick="showImageModal('{{ item.image.url }}')">
                 {% endif %}
             </div>
+            {% endif %}
             {% endfor %}
         </div>
 
@@ -302,15 +320,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" referrerpolicy="no-referrer"></script>
 <script>
     function showImageModal(imageUrl) {
+        if (!imageUrl) return; // Check if imageUrl is provided
+        
         var modal = document.getElementById("imageModal");
         var modalImg = document.getElementById("modalImg");
-        modal.style.display = "block";
-        modalImg.src = imageUrl;
+        
+        if (modal && modalImg) { // Check if elements exist
+            modal.style.display = "block";
+            modalImg.src = imageUrl;
+        }
     }
 
     function closeImageModal() {
         var modal = document.getElementById("imageModal");
-        modal.style.display = "none";
+        if (modal) { // Check if element exists
+            modal.style.display = "none";
+        }
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById("imageModal");
+        if (event.target == modal && modal) {
+            modal.style.display = "none";
+        }
     }
 </script>
 </html>

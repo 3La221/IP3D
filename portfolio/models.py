@@ -33,8 +33,16 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def save(self, *args, **kwargs):
+        # Auto-detect if URL is a video (YouTube, Vimeo, etc.)
         if self.url: 
-            self.isVideo = True
+            video_platforms = [
+                'youtube.com',
+                'youtu.be',
+                'vimeo.com',
+                'dailymotion.com',
+                'twitch.tv'
+            ]
+            self.isVideo = any(platform in self.url.lower() for platform in video_platforms)
         else:
             self.isVideo = False
         super(Project, self).save(*args, **kwargs)
